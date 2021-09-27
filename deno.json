@@ -1,0 +1,10 @@
+{
+	"fmt": {
+		"options": {
+			"useTabs": true,
+			"singleQuote": true,
+			"lineWidth": 2147483647,
+			"proseWrap": "preserve"
+		}
+	}
+}
