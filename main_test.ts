@@ -1,4 +1,12 @@
 import theModule from './main.ts';
-import {assertEquals} from 'https://deno.land/std@0.108.0/testing/asserts.ts';
+import {assertEquals, assertThrows} from 'https://deno.land/std@0.113.0/testing/asserts.ts';
 
-assertEquals(theModule('unicorns'), 'unicorns & rainbows');
+Deno.test({
+  name: 'main',
+  fn(): void {
+    assertEquals(theModule('unicorns'), 'unicorns & rainbows');
+    assertThrows(() => {
+      theModule(123);
+    }, TypeError, 'Expected a string, got number');
+  },
+});
